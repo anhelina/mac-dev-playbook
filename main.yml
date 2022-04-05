@@ -2,7 +2,7 @@
 - hosts: all
 
   vars_files:
-    - default.config.yml
+    - "{{ profile }}.config.yml"
 
   pre_tasks:
     - name: Include playbook configuration.
@@ -26,24 +26,12 @@
       tags: ['dock']
 
   tasks:
-    - import_tasks: tasks/sudoers.yml
-      when: configure_sudoers
-      tags: ['sudoers']
-
-    - import_tasks: tasks/terminal.yml
-      when: configure_terminal
-      tags: ['terminal']
-
+    - import_tasks: tasks/oh-my-zsh.yml
     - import_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']
-
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
-
-    - import_tasks: tasks/sublime-text.yml
-      when: configure_sublime
-      tags: ['sublime-text']
 
     - block:
         - name: Run configured post-provision ansible task files.

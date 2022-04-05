@@ -1,0 +1,5 @@
+---
+
+- name: Install oh-my-zsh.
+  command: "{{ oh_my_zsh_script }}"
+  changed_when: false

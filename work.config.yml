@@ -1,0 +1,86 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: false
+configure_osx: false
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+ - Launchpad
+ - TV
+ - Podcasts
+ - 'App Store'
+ - Messages
+ - Maps
+ - Photos
+ - FaceTime
+ - Calendar
+ - Contacts
+ - Reminders
+ - Notes
+ - Music
+ - Mail
+ - News
+dockitems_persist:
+- name: "Firefox"
+  path: "/Applications/Firefox.app/"
+  pos: 2
+
+# dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+# dotfiles_repo_accept_hostkey: true
+# dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+# dotfiles_files:
+#   - .zshrc
+#   - .gitignore
+#   - .inputrc
+#   - .osx
+#   - .vimrc
+
+homebrew_installed_packages:
+ - zsh
+
+homebrew_taps:
+ - homebrew/core
+ - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+ - firefox
+ - iterm2
+ - bitwarden
+ - telegram
+ - cron
+ - the-unarchiver
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+
+# mas_email: ""
+# mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+oh_my_zsh_script: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
