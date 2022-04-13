@@ -26,6 +26,9 @@ dockitems_persist:
 - name: "Firefox"
   path: "/Applications/Firefox.app/"
   pos: 2
+- name: "Visual Studio Code"
+  path: "/Applications/Visual Studio Code.app/"
+  pos: 3
 
 # dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 # dotfiles_repo_accept_hostkey: true
@@ -43,6 +46,7 @@ homebrew_installed_packages:
 homebrew_taps:
  - homebrew/core
  - homebrew/cask
+ - shopify/shopify
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -52,9 +56,14 @@ homebrew_cask_apps:
  - telegram
  - cron
  - the-unarchiver
+ - nvm
+ - visual-studio-code
+ - shopify-cli
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+- id: 803453959
+  name: "Slack for Desktop"
 
 # mas_email: ""
 # mas_password: ""
